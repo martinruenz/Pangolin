@@ -499,7 +499,7 @@ namespace py_pangolin {
             // Setup stream info
             for(size_t i = 0; i < images.size(); ++i){
                 // num bits per channel
-                auto arr = pybind11::array::ensure(images[i]);
+                auto arr = pybind11::array::ensure(images[i], pybind11::array::c_style);
 
                 // num channels
                 PANGO_ASSERT(arr.ndim() == 2 || arr.ndim() == 3, "Method only accepts ndarrays of 2 or 3 dimensions.");
